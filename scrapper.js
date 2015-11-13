@@ -25,6 +25,7 @@ request(url, function(error, response, html) {
                 var obj = JSON.parse(data);
                 if (obj.price != price) {
                     console.log('Price has changed.');
+                    
                     fs.writeFile('price.json', JSON.stringify(json, null, 4), function(err) {
                         console.log('Price updated in price.json file');
                     });
