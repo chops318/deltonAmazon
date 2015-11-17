@@ -16,7 +16,8 @@ request(url, function(error, response, html) {
     var price, oldprice;
     var json = {
         price: "",
-        oldprice: ""
+        oldprice: "",
+        productTitle: ""
     };
     if (!error && response.statusCode == 200) {
         var $ = cheerio.load(html);
@@ -27,6 +28,7 @@ request(url, function(error, response, html) {
             //console.log(price);
             json.price = price;
             json.oldprice = price;
+            json.productTitle = productTitle;
             console.log(json)
             
 
